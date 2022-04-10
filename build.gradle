@@ -42,6 +42,7 @@ javafx {
 
 dependencies {
     implementation('org.controlsfx:controlsfx:11.1.0')
+    implementation 'org.jsoup:jsoup:1.12.1'
     implementation('com.dlsc.formsfx:formsfx-core:11.3.2') {
         exclude(group: 'org.openjfx')
     }
