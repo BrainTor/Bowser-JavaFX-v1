@@ -1,0 +1,13 @@
+#anchorPane {
+    -fx-border-width: 2px;
+    -fx-border-color: chartreuse;
+}
+#stackPane {
+    -fx-border-width: 2px;
+    -fx-border-color: red;
+
+    /* didn't work */
+   -fx-hgap: 100%;
+   -fx-vgap: 100%;
+   -fx-view-order: 100;
+}

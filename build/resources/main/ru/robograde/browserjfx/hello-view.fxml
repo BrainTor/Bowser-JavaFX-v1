@@ -4,5 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
+<?import javafx.scene.image.ImageView?>
+<VBox fx:controller="ru.robograde.browserjfx.MainController" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <WebView fx:id="webView"/>
+        <ImageView fx:id="sideBar"/>
+        <ImageView fx:id="find"/>
+        <ImageView fx:id="privious"/>
+        <ImageView fx:id="next"/>
+        <ImageView fx:id="zoomOut"/>
+        <ImageView fx:id="zoomIn"/>
+        <ImageView fx:id="presentationMode"/>
+        <ImageView fx:id="viewBookmark"/>
+        <ImageView fx:id="secondaryToolbarToggle"/>
+</VBox>
 
-<WebView fx:id="webView" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.robograde.browserjfx.MainController" />
+
+
