@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b5ee534-9f48-424b-a78e-bc5bddada929" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/bookmark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/find.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/presentation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/previous.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/secondaryToolbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/sidebar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/zoomIn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/zoomOut.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockCopyEventDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockCopyEventDispatcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockRightButtonDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockRightButtonDispatcher.class" afterDir="false" />
@@ -28,8 +20,12 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/ru/robograde/browserjfx/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/hello-view.fxml" afterDir="false" />
+    </list>
+    <list id="42dd340b-bcbe-4526-bedf-361de96059d6" name="Changes by Администратор" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +72,27 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java">
+      <ranges>
+        <range start1="13" end1="13" start2="13" end2="14" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="21" end1="21" start2="22" end2="23" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="79" end1="80" start2="81" end2="84" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="90" end1="91" start2="94" end2="96" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="96" end1="96" start2="101" end2="102" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="97" end1="98" start2="103" end2="104" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="101" end1="101" start2="107" end2="108" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="117" end1="121" start2="124" end2="127" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="128" end1="131" start2="134" end2="135" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="135" end1="135" start2="139" end2="140" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="139" end1="144" start2="144" end2="149" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="146" end1="159" start2="151" end2="166" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="294" end1="297" start2="301" end2="305" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+        <range start1="352" end1="352" start2="360" end2="361" changelist="4b5ee534-9f48-424b-a78e-bc5bddada929" />
+        <range start1="375" end1="375" start2="384" end2="389" changelist="42dd340b-bcbe-4526-bedf-361de96059d6" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -92,7 +109,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Browser-JFX~" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15048184" />
     <property name="project.structure.side.proportion" value="0.50574714" />

@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import jdk.swing.interop.SwingInterOpUtils;
@@ -19,6 +20,7 @@ import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -77,7 +79,9 @@ public class MainController implements Initializable {
     @FXML
     private WebView webView;
     @FXML
-    private ImageView sideBar,find,privious,next,zoomOut,zoomIn,presentationMode,viewBookmark,secondaryToolbarToggle;
+    private ImageView sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle;
+    @FXML
+    private Pane vBox;
     Document doc;
     private static WebEngine webEngine;
     static Document pdfActivity, docActivity;
@@ -88,17 +92,20 @@ public class MainController implements Initializable {
     boolean reloadTimerStarted = false;
     int delay = 8, reloadDelay = 20;
     String iframeSrc;
-    boolean printed=false,imageCreated=false;
+    boolean printed = false, imageCreated = false;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         webEngine = webView.getEngine();
         loadPage();
     }
+
     org.jsoup.nodes.Document document;
-    String str="";
+    String str = "";
     org.jsoup.nodes.Document finalPdf;
     org.jsoup.nodes.Document newIframe;
     org.jsoup.nodes.Element newPdfIframe;
+
     private class SubTimer extends TimerTask {
         //run method
         public String getStringFromElement(org.w3c.dom.Element el) {
@@ -115,10 +122,9 @@ public class MainController implements Initializable {
                 return null;
             }
         }
-        public String getStringFromDocument(Document doc)
-        {
-            try
-            {
+
+        public String getStringFromDocument(Document doc) {
+            try {
                 DOMSource domSource = new DOMSource(doc);
                 StringWriter writer = new StringWriter();
                 StreamResult result = new StreamResult(writer);
@@ -126,37 +132,38 @@ public class MainController implements Initializable {
                 Transformer transformer = tf.newTransformer();
                 transformer.transform(domSource, result);
                 return writer.toString();
-            }
-            catch(TransformerException ex)
-            {
+            } catch (TransformerException ex) {
                 ex.printStackTrace();
                 return null;
             }
         }
+
         @Override
         public void run() {
             Platform.runLater(() -> {
                 org.w3c.dom.Element iframePDf = (org.w3c.dom.Element) doc.getElementsByTagName("iframe").item(0);
-                    if (iframePDf!=null) {
-                        str=iframePDf.getAttribute("src");
-                        //кривое условие срабатывает и в .docx(надо получать полную ссылку,как iframe парсили)
-                        if(iframePDf.getAttribute("src").equals(str)){
-                            //cтарое условие слишком грамозкое
+                if (iframePDf != null) {
+                    str = iframePDf.getAttribute("src");
+                    //кривое условие срабатывает и в .docx(надо получать полную ссылку,как iframe парсили)
+                    if (iframePDf.getAttribute("src").equals(str) && doc.getElementById("onlyofficeViewerFrame") == null) {
+                        //cтарое условие слишком грамозкое
                         //doc != null && doc.getElementById("content") != null && doc.getElementById("content").getAttribute("class").equals("app-dashboard") && doc.getElementById("content").getAttribute("role").equals("main")
                         System.out.println("pdfViewerLoaded");
-                            String[] nameOfImages ={"sidebar","find","previous","next","zoomOut","zoomIn","presentation","bookmark","secondaryToolbar"};
-                            ImageView[] images ={sideBar,find,privious,next,zoomOut,zoomIn,presentationMode,viewBookmark,secondaryToolbarToggle};
-                            if(!imageCreated){
-                                for (int i=0;i< nameOfImages.length;i++){
-                                    File file = new File("src/images/"+nameOfImages[i]+".png");
-                                    Image image = new Image(file.toURI().toString());
-                                    images[i].setImage(image);
-                                    sideBar.setX(500);
-                                    sideBar.setY(500);
-                                    System.out.println(sideBar.getX()+" "+ sideBar.getY());
-                                }
-                                imageCreated=true;
+                        String[] nameOfImages = {"sidebar", "find", "previous", "next", "zoomOut", "zoomIn", "presentation", "bookmark", "secondaryToolbar"};
+                        ImageView[] images = {sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle};
+                        if (!imageCreated) {
+                            for (int i = 0; i < nameOfImages.length; i++) {
+                                File file = new File("src/images/" + nameOfImages[i] + ".png");
+                                Image image = new Image(file.toURI().toString());
+                                images[i].setImage(image);
                             }
+                            sideBar.relocate(3, 53);
+
+                            find.relocate(63, 53);
+                            privious.relocate(94, 53);
+                            next.relocate(124, 53);
+                            imageCreated = true;
+                        }
                         pdfActivity = doc;
                         ArrayList<String> styles = new ArrayList<>();
                         NodeList style = doc.getElementsByTagName("style");
@@ -292,9 +299,10 @@ public class MainController implements Initializable {
                         pdfActFound = false;
                     }
 
-                    }
-                    timerStarted = false;
-                    check();});
+                }
+                timerStarted = false;
+                check();
+            });
         }
     }
 //тут мапа
@@ -350,6 +358,7 @@ public class MainController implements Initializable {
         webView.setEventDispatcher(new BlockCopyEventDispatcher(new BlockRightButtonDispatcher(originalDispatcher)));
         webEngine.getLoadWorker().stateProperty().addListener((observable, oldState, newState) -> {
             if (newState == Worker.State.SUCCEEDED) {
+
                 doc = webEngine.getDocument();
                 check();
             } else if (newState == Worker.State.FAILED) {
@@ -373,5 +382,10 @@ public class MainController implements Initializable {
             webView.toFront();
             event.consume();
         });
+        Platform.runLater(() -> {
+            webView.prefHeightProperty().bind(webView.getScene().heightProperty());
+            webView.prefWidthProperty().bind(webView.getScene().widthProperty());
+        });
+
     }
 }
