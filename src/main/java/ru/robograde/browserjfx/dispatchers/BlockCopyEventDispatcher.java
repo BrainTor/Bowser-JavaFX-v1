@@ -3,8 +3,11 @@ package ru.robograde.browserjfx.dispatchers;
 import javafx.event.Event;
 import javafx.event.EventDispatchChain;
 import javafx.event.EventDispatcher;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import ru.robograde.browserjfx.Utils;
 
 public class BlockCopyEventDispatcher implements EventDispatcher {
 
@@ -24,6 +27,8 @@ public class BlockCopyEventDispatcher implements EventDispatcher {
                     k.getCode().equals(KeyCode.UP) || k.getCode().equals(KeyCode.DOWN))) {
                 event.consume();
             }
+            Utils.clearClipboard();
+
         }
         return oldDispatcher.dispatchEvent(event, tail);
     }

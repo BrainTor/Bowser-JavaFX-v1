@@ -12,8 +12,10 @@ import javafx.scene.web.WebView;
 import org.w3c.dom.Document;
 import ru.robograde.browserjfx.BrowserStatus;
 import ru.robograde.browserjfx.Config;
+import ru.robograde.browserjfx.Utils;
 import ru.robograde.browserjfx.dispatchers.BlockCopyEventDispatcher;
 import ru.robograde.browserjfx.dispatchers.BlockRightButtonDispatcher;
+import ru.robograde.browserjfx.dispatchers.PrintScreenEventDispatcher;
 import ru.robograde.browserjfx.images.CustomImage;
 import ru.robograde.browserjfx.images.impl.*;
 import ru.robograde.browserjfx.timers.CheckStatusTimer;
@@ -51,9 +53,11 @@ public class MainController implements Initializable {
             webView.setContextMenuEnabled(false);
             webEngine.setJavaScriptEnabled(true);
             webView.setEventDispatcher(
-                    new BlockCopyEventDispatcher(
-                            new BlockRightButtonDispatcher(
-                                    webView.getEventDispatcher()
+                    new PrintScreenEventDispatcher(
+                            new BlockCopyEventDispatcher(
+                                    new BlockRightButtonDispatcher(
+                                            webView.getEventDispatcher()
+                                    )
                             )
                     )
             );
@@ -71,10 +75,7 @@ public class MainController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Перенос ссылки запрещен!");
 
-                Clipboard clipboard = Clipboard.getSystemClipboard();
-                ClipboardContent content = new ClipboardContent();
-                content.putString("");
-                clipboard.setContent(content);
+                Utils.clearClipboard();
                 alert.showAndWait();
                 alert.close();
                 webView.toFront();
