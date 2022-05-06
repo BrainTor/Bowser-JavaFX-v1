@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.image.ImageView?>
-<Pane fx:id="vBox" fx:controller="ru.robograde.browserjfx.MainController"   xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="vBox" fx:controller="ru.robograde.browserjfx.controllers.MainController" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <WebView fx:id="webView" />
     <ImageView fx:id="sideBar"/>
     <ImageView fx:id="find"/>
-    <ImageView fx:id="privious"/>
+    <ImageView fx:id="previous"/>
     <ImageView fx:id="next"/>
     <ImageView fx:id="zoomOut"/>
     <ImageView fx:id="zoomIn"/>

@@ -5,25 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b5ee534-9f48-424b-a78e-bc5bddada929" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/BrowserStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/controllers/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/dispatchers/BlockCopyEventDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/dispatchers/BlockRightButtonDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/CustomImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/FindImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/NextImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/PresentationModeImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/PreviousImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/SecondaryToolbarToggleImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/SidebarImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/images/impl/ViewBookmarkImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/timers/CheckStatusTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockCopyEventDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockCopyEventDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockRightButtonDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockRightButtonDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$ReloadTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$ReloadTimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$SubTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$SubTimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/ru/robograde/browserjfx/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockCopyEventDispatcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/BlockRightButtonDispatcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$ReloadTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController$SubTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/robograde/browserjfx/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/presentation.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/presentation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/secondaryToolbar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/secondaryToolbar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid15348.log" beforeDir="false" afterPath="$PROJECT_DIR$/hs_err_pid15348.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/bookmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/find.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/presentation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/previous.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/secondaryToolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/sidebar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/zoomIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/zoomOut.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/robograde/browserjfx/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/robograde/browserjfx/style.css" beforeDir="false" />
     </list>
     <list id="42dd340b-bcbe-4526-bedf-361de96059d6" name="Changes by Администратор" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +86,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -87,21 +119,28 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15048184" />
     <property name="project.structure.side.proportion" value="0.50574714" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.robograde.browserjfx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Browser-JFX\src\main\resources" />
       <recent name="C:\Users\myace\Documents\Browser-JFX-master\src\images" />
       <recent name="C:\Users\myace\Documents\Browser-JFX-master\src" />
       <recent name="C:\Users\myace\Documents\Browser-JFX-master\src\main\resources" />
       <recent name="C:\Users\myace\Documents\Browser-JFX-master\src\main\resources\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.robograde.browserjfx.images.impl" />
     </key>
   </component>
   <component name="RunManager">
@@ -122,8 +161,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649414963156</updated>
+      <workItem from="1651861249888" duration="4962000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
