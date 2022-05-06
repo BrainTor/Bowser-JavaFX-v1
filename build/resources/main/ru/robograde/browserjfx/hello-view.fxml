@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.image.ImageView?>
-<Pane fx:id="vBox" fx:controller="ru.robograde.browserjfx.MainController" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="vBox" fx:controller="ru.robograde.browserjfx.MainController"   xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <WebView fx:id="webView" />
     <ImageView fx:id="sideBar"/>
     <ImageView fx:id="find"/>

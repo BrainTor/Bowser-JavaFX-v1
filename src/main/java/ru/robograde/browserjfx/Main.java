@@ -27,6 +27,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
         stage.setTitle("RGCloud");
+        stage.minWidthProperty().set(626);
         stage.getIcons().add(new Image("file:icon.png"));
 //        stage.maximizedProperty().a//ddListener(new ChangeListener<Boolean>() {
 //            @Override

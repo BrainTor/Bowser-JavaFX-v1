@@ -7,6 +7,7 @@ import javafx.event.EventDispatchChain;
 import javafx.event.EventDispatcher;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,8 +81,6 @@ public class MainController implements Initializable {
     private WebView webView;
     @FXML
     private ImageView sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle;
-    @FXML
-    private Pane vBox;
     Document doc;
     private static WebEngine webEngine;
     static Document pdfActivity, docActivity;
@@ -90,10 +89,9 @@ public class MainController implements Initializable {
     Timer reloadTimer = new java.util.Timer();
     boolean timerStarted = false;
     boolean reloadTimerStarted = false;
-    int delay = 8, reloadDelay = 20;
+    int delay = 1, reloadDelay = 20;
     String iframeSrc;
     boolean printed = false, imageCreated = false;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         webEngine = webView.getEngine();
@@ -144,25 +142,45 @@ public class MainController implements Initializable {
                 org.w3c.dom.Element iframePDf = (org.w3c.dom.Element) doc.getElementsByTagName("iframe").item(0);
                 if (iframePDf != null) {
                     str = iframePDf.getAttribute("src");
-                    //кривое условие срабатывает и в .docx(надо получать полную ссылку,как iframe парсили)
                     if (iframePDf.getAttribute("src").equals(str) && doc.getElementById("onlyofficeViewerFrame") == null) {
-                        //cтарое условие слишком грамозкое
-                        //doc != null && doc.getElementById("content") != null && doc.getElementById("content").getAttribute("class").equals("app-dashboard") && doc.getElementById("content").getAttribute("role").equals("main")
                         System.out.println("pdfViewerLoaded");
                         String[] nameOfImages = {"sidebar", "find", "previous", "next", "zoomOut", "zoomIn", "presentation", "bookmark", "secondaryToolbar"};
-                        ImageView[] images = {sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle};
+                        ImageView[] images={sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle};
                         if (!imageCreated) {
                             for (int i = 0; i < nameOfImages.length; i++) {
                                 File file = new File("src/images/" + nameOfImages[i] + ".png");
                                 Image image = new Image(file.toURI().toString());
                                 images[i].setImage(image);
                             }
-                            sideBar.relocate(3, 53);
-
-                            find.relocate(63, 53);
-                            privious.relocate(94, 53);
-                            next.relocate(124, 53);
                             imageCreated = true;
+                        }
+                        else{
+                            if(webView.getScene().getWidth()>=665){
+                                sideBar.relocate(3, 53);
+                                find.relocate(63, 53);
+                                privious.relocate(94, 53);
+                                next.relocate(124, 53);
+                                secondaryToolbarToggle.relocate(webView.getScene().getWidth()-28,53);
+                                viewBookmark.relocate(webView.getScene().getWidth()-65,53);
+                                presentationMode.relocate(webView.getScene().getWidth()-93,53);
+                            }else{
+                                sideBar.relocate(3, 53);
+                                find.relocate(33, 53);
+                                privious.setVisible(false);
+                                next.setVisible(false);
+                                viewBookmark.setVisible(false);
+                                presentationMode.setVisible(false);
+                                secondaryToolbarToggle.relocate(webView.getScene().getWidth()-28,53);
+                            }
+
+                              if(webView.getScene().getWidth()>=626&&webView.getScene().getWidth()<=665){
+
+                              }
+                           if(!sideBar.isVisible()){
+                               for (int i=0;i< images.length;i++){
+                                   images[i].setVisible(true);
+                               }
+                           }
                         }
                         pdfActivity = doc;
                         ArrayList<String> styles = new ArrayList<>();
@@ -287,18 +305,28 @@ public class MainController implements Initializable {
 //                                System.out.println(e.getMessage() + e.getCause());
 //                            }
 //                        }
-
-
                         pdfActFound = true;
                         docActFound = false;
                     }
-                    if (doc != null && doc.getElementById("onlyofficeViewerFrame") != null) {
-                        System.out.println("docViewerLoaded");
-                        docActivity = doc;
-                        docActFound = true;
-                        pdfActFound = false;
+                }
+                if (doc != null && doc.getElementById("onlyofficeViewerFrame") != null) {
+                    System.out.println("docViewerLoaded");
+                    ImageView[] images={sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle};
+                    for (int i=0;i<images.length;i++){
+                        images[i].setVisible(false);
                     }
-
+                    docActivity = doc;
+                    docActFound = true;
+                    pdfActFound = false;
+                }
+                if(doc != null && iframePDf==null && doc.getElementById("onlyofficeViewerFrame") == null){
+                    System.out.println("Main menu/login");
+                    ImageView[] images={sideBar, find, privious, next, zoomOut, zoomIn, presentationMode, viewBookmark, secondaryToolbarToggle};
+                    for (int i=0;i<images.length;i++){
+                        if(images[i]!=null){
+                            images[i].setVisible(false);
+                        }
+                    }
                 }
                 timerStarted = false;
                 check();
@@ -337,7 +365,6 @@ public class MainController implements Initializable {
         if (!timerStarted) {
             if (!pdfActFound || !docActFound) {
                 tm.schedule(new SubTimer(), delay * 1000L);
-                // System.out.println("timerStart");
                 timerStarted = true;
             }
         }
@@ -358,12 +385,12 @@ public class MainController implements Initializable {
         webView.setEventDispatcher(new BlockCopyEventDispatcher(new BlockRightButtonDispatcher(originalDispatcher)));
         webEngine.getLoadWorker().stateProperty().addListener((observable, oldState, newState) -> {
             if (newState == Worker.State.SUCCEEDED) {
-
                 doc = webEngine.getDocument();
                 check();
             } else if (newState == Worker.State.FAILED) {
                 // через таймер перезагружать
                 System.out.println("Not loaded");
+                //кривой таймер
                 // reLoad();
             }
         });
